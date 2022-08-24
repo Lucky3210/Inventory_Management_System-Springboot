@@ -1,0 +1,26 @@
+.team {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  .team-img {
+    width: 14rem;
+    height: 14rem;
+    border: 0.5rem solid rgba(0, 0, 0, 0.1);
+  }
+  .team-member h4, .team-member .h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+  .mt-8{
+      margin-top: 200px;
+  }
+  #filename{
+      width: 30%;
+      height: 50vh;
+  }
+  input[type=search]{
+      width: 70%;
+  }
+  .ps-6{
+    padding-left: 7rem !important;
+  }

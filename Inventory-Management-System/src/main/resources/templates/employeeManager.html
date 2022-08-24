@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" th:href="@{/CSS/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/CSS/style.css}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 bg-primary">
+                <div class="mt-8 list-group-flush">
+                  <div class="list-group">
+                      <a th:href="@{/item}" class="list-group-item d-flex justify-content-between align-items-center  active">Inventory<span class="badge bg-danger rounded-pill">1</span></a>
+                      <a th:href="@{/employee/showNewEmployeeForm}" class="list-group-item d-flex justify-content-between align-items-center">Staff Manager<span class="badge bg-danger rounded-pill">4</span> </a>
+                      <!--                     <a href="updateEmployee.html" class="list-group-item list-group-item-action"> Update Staff</a>-->
+                      <a th:href="@{/createEmployee}" class="list-group-item list-group-item-action">Create Staff</a>
+                      <!--                     <a href="CreateOrder.html" class="list-group-item list-group-item-action">Create Order</a>-->
+                      <a href="login.html" class="list-group-item list-group-item-action">Logout</a>
+                 </div>
+                </div>
+            </div>
+            <div class="col-md-9  m-5" style="height: 100vh; background-color: hsla(225, 9%, 91%, 0.9) !important;">
+
+              <table class="table mt-5">
+                <thead>
+              
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Staff ID</th>
+                  <th>Address</th>
+                  <th>Email</th>
+                  <th>Action</th>
+<!--                  <td>Phone Number</td>-->
+                </thead>
+
+                  <tbody>
+                  <tr th:each="employee : ${listEmployees}">
+                      <td th:text="${employee.firstName}"></td>
+                      <td th:text="${employee.lastName}"></td>
+                      <td th:text="${employee.id}"></td>
+                      <td th:text="${employee.address}"></td>
+                      <td th:text="${employee.email}"></td>
+                      <td>
+                          <a th:href="@{/employee/showFormForUpdate/{id}(id=${employee.id})}" class="btn btn-light btn-sm">Update</a>
+                          <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-outline-danger btn-sm">Delete</a>
+<!--                          <a th:href="@{/suspendEmployee/{id}(id=${employee.id})}" class="btn btn-secondary">Suspend</a>-->
+                      </td>
+
+                  </tr>
+                  </tbody>
+                </table>
+                 
+          </div>
+        </div>
+    </div>
+</body>
+</html>
+

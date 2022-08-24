@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" th:href="@{/CSS/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/CSS/style.css}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 bg-primary">
+                <div class="mt-8 list-group-flush">
+                  <div class="list-group">
+                      <a th:href="@{/item}" class="list-group-item d-flex justify-content-between align-items-center  active">Inventory<span class="badge bg-danger rounded-pill">1</span></a>
+                    <a th:href="@{/employee/showNewEmployeeForm}" class="list-group-item d-flex justify-content-between align-items-center">Staff Manager<span class="badge bg-danger rounded-pill">4</span> </a>
+<!--                     <a href="updateEmployee.html" class="list-group-item list-group-item-action"> Update Staff</a>-->
+                     <a th:href="@{/createEmployee}" class="list-group-item list-group-item-action">Create Staff</a>
+<!--                     <a href="CreateOrder.html" class="list-group-item list-group-item-action">Create Order</a>-->
+                     <a href="login.html" class="list-group-item list-group-item-action">Logout</a>
+                 </div>
+                </div>
+            </div>
+            <div class="col-md-9  m-5" style="height: 100vh; background-color: hsla(225, 9%, 91%, 0.9) !important;">
+        
+              <div class="row mt-5">
+                 <div class="col-md-4">
+                  
+                  <select class="form-control">
+                      <option> Category</option>
+                      <option value="Perishable">Perishable</option>
+                      <option value="Unperishable">Unperishable</option>
+                  </select>
+                 </div>
+                  <div class="col-md-4">
+                      
+                              <select class="form-control">
+                                  <option> Brand</option>
+                                  <option value="Perishable">Perishable</option>
+                                  <option value="Unperishable">Unperishable</option>
+                              </select>
+                  </div>
+                  <div class="col-md-4">
+                    <span ><a th:href="@{/item/new}"><img th:src="@{/CSS/images/iconmonstr-plus-4.svg}" width="20%"></a></span>
+                  </div>
+                  
+              </div>
+              <table class="table mt-5">
+                  <thead>
+<!--                    <th>&nbsp;</th>-->
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Brand</th>
+                    <th>Stock</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                  </thead>
+
+<!--                  <tbody>-->
+<!--                    <tr th:each="item : ${items}">-->
+<!--                        <td th:text="${item.title}"></td>-->
+<!--                        <td th:text="${item.category}"></td>-->
+<!--                        <td th:text="${item.brand}"></td>-->
+<!--                        <td th:text="${item.stock}"></td>-->
+<!--                        <td th:text="${item.date}"></td>-->
+<!--                        <td>-->
+<!--                            <a th:href="@{/updateForm/{id}(id=${item.id})}" class="btn btn-light btn-sm">Update</a>-->
+<!--                            <a th:href="@{/{id}(id=${item.id})}" class="btn btn-danger btn-sm">Delete</a>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+
+<!--                  </tbody>-->
+                 
+                </table>
+                 
+          </div>
+        </div>
+    </div>
+</body>
+</html>
